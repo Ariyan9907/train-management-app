@@ -5,6 +5,7 @@ import com.bridgelabz.model.Bogie;
 import com.bridgelabz.model.Train;
 import com.bridgelabz.util.RegexValidator;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -394,6 +395,21 @@ public class TrainService {
         for (int capacity : capacities) {
             System.out.println(capacity);
         }
+    }
+
+    // Sorts bogie names using Arrays.sort().
+    public void sortBogieNames() {
+
+        String[] bogieNames = {"Sleeper", "First Class", "AC Chair", "Coal Wagon", "Petroleum Tank"};
+
+        Arrays.sort(bogieNames);
+
+        System.out.println("\n========= Sorted Bogie Names =========");
+
+        for (String bogie : bogieNames) {
+            System.out.println(bogie);
+        }
+
     }
 
 
