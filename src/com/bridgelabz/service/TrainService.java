@@ -62,4 +62,26 @@ public class TrainService {
         }
     }
 
+    public void addBogieIds(Train train) {
+
+        train.getBogieIds().add("BG101");
+        train.getBogieIds().add("BG102");
+        train.getBogieIds().add("BG103");
+
+        // Duplicate IDs
+        train.getBogieIds().add("BG101");
+        train.getBogieIds().add("BG102");
+
+        System.out.println("\nBogie IDs added successfully.");
+    }
+
+    public void displayUniqueBogieIds(Train train) {
+
+        System.out.println("\n========= Unique Bogie IDs =========");
+
+        for (String id : train.getBogieIds()) {
+            System.out.println(id);
+        }
+    }
+
 }
