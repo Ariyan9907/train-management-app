@@ -487,6 +487,17 @@ public class TrainService {
 
     }
 
+    // Checks whether the train is ready for operation.
+    public void checkTrainStatus(Train train) {
+
+        if (train.getPassengerBogies().isEmpty()) {
+            throw new IllegalStateException("Train has no bogies. Operation cannot continue.");
+        }
+
+        System.out.println("\nTrain is ready for operation.");
+
+    }
+
 
 
 }
