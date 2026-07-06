@@ -175,23 +175,33 @@ public class TrainService {
         }
     }
 
-    // Adds bogie objects with their properties.
+    // Adds passenger bogies after validating capacity.
     public void addPassengerBogieObjects(Train train) {
 
-        train.getPassengerBogies().add(
-                new Bogie("Sleeper",72,"Passenger","Rectangular","Passengers"));
+        try {
 
-        train.getPassengerBogies().add(
-                new Bogie("AC Chair",56,"Passenger","Rectangular","Passengers"));
+            train.getPassengerBogies().add(
+                    new Bogie("Sleeper",72,"Passenger","Rectangular","Passengers"));
 
-        train.getPassengerBogies().add(
-                new Bogie("First Class",24,"Passenger","Rectangular","Passengers"));
+            train.getPassengerBogies().add(
+                    new Bogie("AC Chair",56,"Passenger","Rectangular","Passengers"));
 
-        train.getPassengerBogies().add(
-                new Bogie("Coal Wagon",120,"Goods","Rectangular","Coal"));
+            train.getPassengerBogies().add(
+                    new Bogie("First Class",24,"Passenger","Rectangular","Passengers"));
 
-        train.getPassengerBogies().add(
-                new Bogie("Petroleum Tank",150,"Goods","Cylindrical","Petroleum"));
+            train.getPassengerBogies().add(
+                    new Bogie("Coal Wagon",120,"Goods","Rectangular","Coal"));
+
+            train.getPassengerBogies().add(
+                    new Bogie("Petroleum Tank",150,"Goods","Cylindrical","Petroleum"));
+
+            System.out.println("\nPassenger bogies added successfully.");
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
 
     }
 
