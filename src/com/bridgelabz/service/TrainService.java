@@ -442,6 +442,51 @@ public class TrainService {
 
     }
 
+    // Searches a bogie ID using Binary Search.
+    public void binarySearchBogieId() {
+
+        String[] bogieIds = {"BG101", "BG205", "BG310", "BG450", "BG512"};
+
+        String searchKey = "BG450";
+
+        int low = 0;
+        int high = bogieIds.length - 1;
+
+        boolean found = false;
+
+        while (low <= high) {
+
+            int mid = (low + high) / 2;
+
+            int result = bogieIds[mid].compareTo(searchKey);
+
+            if (result == 0) {
+
+                found = true;
+                break;
+
+            } else if (result < 0) {
+
+                low = mid + 1;
+
+            } else {
+
+                high = mid - 1;
+
+            }
+
+        }
+
+        System.out.println("\n========= Binary Search =========");
+
+        if (found) {
+            System.out.println(searchKey + " Found");
+        } else {
+            System.out.println(searchKey + " Not Found");
+        }
+
+    }
+
 
 
 }
