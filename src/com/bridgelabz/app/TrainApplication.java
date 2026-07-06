@@ -51,6 +51,8 @@ public class TrainApplication {
 
         trainService.comparePerformance(train);
 
+        trainService.assignCargo("Petroleum Tank", "Petroleum");
+
     }
 
 

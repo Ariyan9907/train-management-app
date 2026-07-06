@@ -341,6 +341,34 @@ public class TrainService {
 
     }
 
+    // Assigns cargo to a goods bogie safely.
+    public void assignCargo(String bogieName, String cargo) {
+
+        try {
+
+            if (bogieName.equalsIgnoreCase("Petroleum Tank")
+                    && !cargo.equalsIgnoreCase("Petroleum")) {
+
+                throw new IllegalArgumentException(
+                        "Petroleum Tank can carry only Petroleum.");
+            }
+
+            System.out.println("\nCargo assigned successfully.");
+            System.out.println("Bogie : " + bogieName);
+            System.out.println("Cargo : " + cargo);
+
+        } catch (IllegalArgumentException e) {
+
+            System.out.println("\nError : " + e.getMessage());
+
+        } finally {
+
+            System.out.println("Cargo assignment process completed.");
+
+        }
+
+    }
+
 
 
 }
