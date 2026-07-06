@@ -57,6 +57,8 @@ public class TrainApplication {
 
         trainService.sortBogieNames();
 
+        trainService.linearSearchBogieId();
+
     }
 
 
