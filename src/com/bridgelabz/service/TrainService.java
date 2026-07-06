@@ -412,6 +412,36 @@ public class TrainService {
 
     }
 
+    // Searches a bogie ID using Linear Search.
+    public void linearSearchBogieId() {
+
+        String[] bogieIds = {"BG101", "BG205", "BG310", "BG450","BG512"};
+
+        String searchKey = "BG310";
+
+        boolean found = false;
+
+        for (String bogieId : bogieIds) {
+
+            if (bogieId.equals(searchKey)) {
+
+                found = true;
+                break;
+
+            }
+
+        }
+
+        System.out.println("\n========= Linear Search =========");
+
+        if (found) {
+            System.out.println(searchKey + " Found");
+        } else {
+            System.out.println(searchKey + " Not Found");
+        }
+
+    }
+
 
 
 }
