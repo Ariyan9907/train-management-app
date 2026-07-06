@@ -175,25 +175,24 @@ public class TrainService {
         }
     }
 
-    // Adds passenger bogie objects with their category.
+    // Adds bogie objects with their properties.
     public void addPassengerBogieObjects(Train train) {
 
         train.getPassengerBogies().add(
-                new Bogie("Sleeper",72,"Passenger"));
+                new Bogie("Sleeper",72,"Passenger","Rectangular","Passengers"));
 
         train.getPassengerBogies().add(
-                new Bogie("AC Chair",56,"Passenger"));
+                new Bogie("AC Chair",56,"Passenger","Rectangular","Passengers"));
 
         train.getPassengerBogies().add(
-                new Bogie("First Class",24,"Passenger"));
+                new Bogie("First Class",24,"Passenger","Rectangular","Passengers"));
 
         train.getPassengerBogies().add(
-                new Bogie("Coal Wagon",120,"Goods"));
+                new Bogie("Coal Wagon",120,"Goods","Rectangular","Coal"));
 
         train.getPassengerBogies().add(
-                new Bogie("Petroleum Tank",150,"Goods"));
+                new Bogie("Petroleum Tank",150,"Goods","Cylindrical","Petroleum"));
 
-        System.out.println("\nPassenger bogie objects added successfully.");
     }
 
     // Sorts passenger bogies by seating capacity.
@@ -277,5 +276,27 @@ public class TrainService {
             System.out.println("Invalid Cargo Code.");
         }
     }
+
+    // Checks whether all goods bogies satisfy safety rules.
+    public void checkSafetyCompliance(Train train) {
+
+        boolean isSafe = train.getPassengerBogies()
+                .stream()
+                .filter(bogie -> bogie.getType().equals("Goods"))
+                .allMatch(bogie ->
+                        !bogie.getShape().equals("Cylindrical")
+                                || bogie.getCargo().equals("Petroleum"));
+
+        System.out.println("\n========= Safety Compliance =========");
+
+        if (isSafe) {
+            System.out.println("Train is Safety Compliant.");
+        } else {
+            System.out.println("Train is NOT Safety Compliant.");
+        }
+
+    }
+
+
 
 }

@@ -47,6 +47,8 @@ public class TrainApplication {
 
         trainService.validateTrainDetails("TRN-1234", "PET-AB");
 
+        trainService.checkSafetyCompliance(train);
+
     }
 
 

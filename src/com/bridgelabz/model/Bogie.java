@@ -5,12 +5,16 @@ public class Bogie {
     private String name;
     private int capacity;
     private String type;
+    private String shape;
+    private String cargo;
 
-    // Initializes a bogie with name and seating capacity.
-    public Bogie(String name, int capacity, String type) {
+    // Initializes a bogie with its details.
+    public Bogie(String name, int capacity, String type, String shape, String cargo) {
         this.name = name;
         this.capacity = capacity;
         this.type = type;
+        this.shape = shape;
+        this.cargo = cargo;
     }
 
     // Returns the bogie name.
@@ -23,14 +27,17 @@ public class Bogie {
         return capacity;
     }
 
-    // Returns the bogie details as a string.
-    @Override
-    public String toString() {
-        return name + " --> " + capacity + " Seats";
-    }
 
     public String getType() {
         return type;
+    }
+
+    public String getShape() {
+        return shape;
+    }
+
+    public String getCargo() {
+        return cargo;
     }
 
     @Override
