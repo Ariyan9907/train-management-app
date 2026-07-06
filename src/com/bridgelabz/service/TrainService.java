@@ -297,6 +297,40 @@ public class TrainService {
 
     }
 
+    // Compares the performance of loop and stream filtering.
+    public void comparePerformance(Train train) {
+
+        // Loop Performance
+        long loopStart = System.nanoTime();
+
+        for (Bogie bogie : train.getPassengerBogies()) {
+            if (bogie.getCapacity() > 60) {
+                // Filtering performed
+            }
+        }
+
+        long loopEnd = System.nanoTime();
+
+        // Stream Performance
+        long streamStart = System.nanoTime();
+
+        train.getPassengerBogies()
+                .stream()
+                .filter(bogie -> bogie.getCapacity() > 60)
+                .toList();
+
+        long streamEnd = System.nanoTime();
+
+        System.out.println("\n========= Performance Comparison =========");
+
+        System.out.println("Loop Execution Time   : "
+                + (loopEnd - loopStart) + " ns");
+
+        System.out.println("Stream Execution Time : "
+                + (streamEnd - streamStart) + " ns");
+
+    }
+
 
 
 }
