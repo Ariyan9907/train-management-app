@@ -7,10 +7,12 @@ public class Train {
     private List<String> bogies;
     private Set<String> bogieIds;
     private LinkedList<String> trainConsist;
+    private LinkedHashSet<String> trainFormation;
 
     public Train() {
         bogies = new ArrayList<>();
         bogieIds = new HashSet<>();
+        trainFormation = new LinkedHashSet<>();
     }
 
     public List<String> getBogies() {
@@ -36,4 +38,14 @@ public class Train {
     public void setTrainConsist(LinkedList<String> trainConsist) {
         this.trainConsist = trainConsist;
     }
+
+    public LinkedHashSet<String> getTrainFormation() {
+        return trainFormation;
+    }
+
+    public void setTrainFormation(LinkedHashSet<String> trainFormation) {
+        this.trainFormation = trainFormation;
+    }
+
+
 }
