@@ -119,4 +119,26 @@ public class TrainService {
         }
     }
 
+    public void createTrainFormation(Train train) {
+
+        train.getTrainFormation().add("Engine");
+        train.getTrainFormation().add("Sleeper");
+        train.getTrainFormation().add("Cargo");
+        train.getTrainFormation().add("Guard");
+
+
+        train.getTrainFormation().add("Sleeper");
+
+        System.out.println("\nTrain formation created successfully.");
+    }
+
+    public void displayTrainFormation(Train train) {
+
+        System.out.println("Train Formation");
+
+        for (String bogie : train.getTrainFormation()) {
+            System.out.println(bogie);
+        }
+    }
+
 }
