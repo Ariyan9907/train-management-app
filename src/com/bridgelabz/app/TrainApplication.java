@@ -49,6 +49,8 @@ public class TrainApplication {
 
         trainService.checkSafetyCompliance(train);
 
+        trainService.comparePerformance(train);
+
     }
 
 
