@@ -5,6 +5,7 @@ import com.bridgelabz.model.Bogie;
 import com.bridgelabz.model.Train;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 
 public class TrainService {
@@ -199,6 +200,19 @@ public class TrainService {
         for (Bogie bogie : train.getPassengerBogies()) {
             System.out.println(bogie);
         }
+    }
+
+    // Filters passenger bogies having capacity greater than 60.
+    public void filterPassengerBogies(Train train) {
+
+        List<Bogie> filteredBogies = train.getPassengerBogies()
+                .stream()
+                .filter(bogie -> bogie.getCapacity() > 60)
+                .toList();
+
+        System.out.println("\n========= High Capacity Passenger Bogies =========");
+
+        filteredBogies.forEach(System.out::println);
     }
 
 }
