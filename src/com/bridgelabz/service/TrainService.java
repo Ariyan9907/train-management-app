@@ -247,4 +247,16 @@ public class TrainService {
 
     }
 
+    // Calculates the total seating capacity of all bogies.
+    public void calculateTotalSeatingCapacity(Train train) {
+
+        int totalSeats = train.getPassengerBogies()
+                .stream()
+                .map(Bogie::getCapacity)
+                .reduce(0, Integer::sum);
+
+        System.out.println("\n========= Total Seating Capacity =========");
+        System.out.println("Total Seats : " + totalSeats);
+    }
+
 }
