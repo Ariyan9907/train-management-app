@@ -1,5 +1,7 @@
 package com.bridgelabz.model;
 
+import com.bridgelabz.exception.InvalidCapacityException;
+
 public class Bogie {
 
     private String name;
@@ -9,7 +11,7 @@ public class Bogie {
     private String cargo;
 
     // Initializes a bogie with its details.
-    public Bogie(String name, int capacity, String type, String shape, String cargo) {
+    public Bogie(String name, int capacity, String type, String shape, String cargo) throws InvalidCapacityException {
         this.name = name;
         this.capacity = capacity;
         this.type = type;
