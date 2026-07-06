@@ -17,4 +17,6 @@ public class Train {
     public void setBogies(List<String> bogies){
         this.bogies=bogies;
     }
+
+
 }
