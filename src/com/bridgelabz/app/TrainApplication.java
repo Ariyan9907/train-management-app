@@ -61,6 +61,17 @@ public class TrainApplication {
 
         trainService.binarySearchBogieId();
 
+
+        try {
+
+            trainService.checkTrainStatus(train);
+
+        } catch (IllegalStateException e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
     }
 
 
