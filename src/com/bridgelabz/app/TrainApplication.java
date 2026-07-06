@@ -53,6 +53,8 @@ public class TrainApplication {
 
         trainService.assignCargo("Petroleum Tank", "Petroleum");
 
+        trainService.bubbleSortPassengerCapacities();
+
     }
 
 
