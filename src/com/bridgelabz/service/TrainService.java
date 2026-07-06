@@ -3,6 +3,8 @@ package com.bridgelabz.service;
 
 import com.bridgelabz.model.Train;
 
+import java.util.Map;
+
 public class TrainService {
 
     public Train initializeTrain() {
@@ -138,6 +140,33 @@ public class TrainService {
 
         for (String bogie : train.getTrainFormation()) {
             System.out.println(bogie);
+        }
+    }
+
+    // Adds passenger bogies along with their seating capacity.
+
+    public void addBogieCapacity(Train train) {
+
+        train.getBogieCapacity().put("Sleeper", 72);
+        train.getBogieCapacity().put("AC Chair", 56);
+        train.getBogieCapacity().put("First Class", 24);
+
+        System.out.println("\nBogie capacities added successfully.");
+    }
+
+
+     // Displays each bogie with its seating capacity.
+
+    public void displayBogieCapacity(Train train) {
+
+        System.out.println("\n========= Bogie Capacity =========");
+
+        for (Map.Entry<String, Integer> entry : train.getBogieCapacity().entrySet()) {
+
+            System.out.println(
+                    entry.getKey() + " --> " + entry.getValue() + " Seats"
+            );
+
         }
     }
 
