@@ -21,5 +21,9 @@ public class TrainApplication {
 
         trainService.displayBogies(train);
 
+        trainService.addBogieIds(train);
+
+        trainService.displayUniqueBogieIds(train);
+
     }
 }
