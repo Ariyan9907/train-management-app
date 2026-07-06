@@ -33,6 +33,10 @@ public class TrainApplication {
 
         trainService.displayTrainConsist(train);
 
+        trainService.createTrainFormation(train);
+
+        trainService.displayTrainFormation(train);
+
     }
 
 
