@@ -1,8 +1,10 @@
 package com.bridgelabz.service;
 
 
+import com.bridgelabz.model.Bogie;
 import com.bridgelabz.model.Train;
 
+import java.util.Comparator;
 import java.util.Map;
 
 public class TrainService {
@@ -167,6 +169,35 @@ public class TrainService {
                     entry.getKey() + " --> " + entry.getValue() + " Seats"
             );
 
+        }
+    }
+
+    // Adds passenger bogie objects to the train.
+    public void addPassengerBogieObjects(Train train) {
+
+        train.getPassengerBogies().add(new Bogie("Sleeper",72));
+        train.getPassengerBogies().add(new Bogie("AC Chair",56));
+        train.getPassengerBogies().add(new Bogie("First Class",24));
+
+        System.out.println("\nPassenger bogie objects added successfully.");
+    }
+
+    // Sorts passenger bogies by seating capacity.
+    public void sortPassengerBogiesByCapacity(Train train) {
+
+        train.getPassengerBogies()
+                .sort(Comparator.comparingInt(Bogie::getCapacity));
+
+        System.out.println("\nPassenger bogies sorted successfully.");
+    }
+
+    // Displays all passenger bogies in sorted order.
+    public void displaySortedPassengerBogies(Train train) {
+
+        System.out.println("\n========= Sorted Passenger Bogies =========");
+
+        for (Bogie bogie : train.getPassengerBogies()) {
+            System.out.println(bogie);
         }
     }
 
