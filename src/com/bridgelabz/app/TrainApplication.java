@@ -55,6 +55,8 @@ public class TrainApplication {
 
         trainService.bubbleSortPassengerCapacities();
 
+        trainService.sortBogieNames();
+
     }
 
 
