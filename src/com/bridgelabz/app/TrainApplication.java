@@ -25,5 +25,16 @@ public class TrainApplication {
 
         trainService.displayUniqueBogieIds(train);
 
+        trainService.createTrainConsist(train);
+
+        trainService.insertPantryCar(train);
+
+        trainService.removeFirstAndLastBogie(train);
+
+        trainService.displayTrainConsist(train);
+
     }
+
+
+
 }
