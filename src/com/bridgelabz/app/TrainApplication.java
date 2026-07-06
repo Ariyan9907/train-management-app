@@ -59,6 +59,8 @@ public class TrainApplication {
 
         trainService.linearSearchBogieId();
 
+        trainService.binarySearchBogieId();
+
     }
 
 
