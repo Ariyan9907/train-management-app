@@ -1,14 +1,12 @@
 package com.bridgelabz.model;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Train {
 
     private List<String> bogies;
     private Set<String> bogieIds;
+    private LinkedList<String> trainConsist;
 
     public Train() {
         bogies = new ArrayList<>();
@@ -29,5 +27,13 @@ public class Train {
 
     public void setBogieIds(Set<String> bogieIds) {
         this.bogieIds = bogieIds;
+    }
+
+    public LinkedList<String> getTrainConsist() {
+        return trainConsist;
+    }
+
+    public void setTrainConsist(LinkedList<String> trainConsist) {
+        this.trainConsist = trainConsist;
     }
 }
