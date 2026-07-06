@@ -45,6 +45,8 @@ public class TrainApplication {
 
         trainService.calculateTotalSeatingCapacity(train);
 
+        trainService.validateTrainDetails("TRN-1234", "PET-AB");
+
     }
 
 

@@ -3,6 +3,7 @@ package com.bridgelabz.service;
 
 import com.bridgelabz.model.Bogie;
 import com.bridgelabz.model.Train;
+import com.bridgelabz.util.RegexValidator;
 
 import java.util.Comparator;
 import java.util.List;
@@ -257,6 +258,24 @@ public class TrainService {
 
         System.out.println("\n========= Total Seating Capacity =========");
         System.out.println("Total Seats : " + totalSeats);
+    }
+
+    // Validates train ID and cargo code.
+    public void validateTrainDetails(String trainId, String cargoCode) {
+
+        RegexValidator validator = new RegexValidator();
+
+        if (validator.validateTrainId(trainId)) {
+            System.out.println("\nTrain ID is Valid.");
+        } else {
+            System.out.println("\nInvalid Train ID.");
+        }
+
+        if (validator.validateCargoCode(cargoCode)) {
+            System.out.println("Cargo Code is Valid.");
+        } else {
+            System.out.println("Invalid Cargo Code.");
+        }
     }
 
 }
