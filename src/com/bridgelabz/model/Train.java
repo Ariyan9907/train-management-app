@@ -9,12 +9,14 @@ public class Train {
     private LinkedList<String> trainConsist;
     private LinkedHashSet<String> trainFormation;
     private Map<String, Integer> bogieCapacity;
+    private List<Bogie> passengerBogies;
 
     public Train() {
         bogies = new ArrayList<>();
         bogieIds = new HashSet<>();
         trainFormation = new LinkedHashSet<>();
         bogieCapacity = new HashMap<>();
+        passengerBogies = new ArrayList<>();
     }
 
     public List<String> getBogies() {
@@ -55,6 +57,14 @@ public class Train {
 
     public void setBogieCapacity(Map<String, Integer> bogieCapacity) {
         this.bogieCapacity = bogieCapacity;
+    }
+
+    public List<Bogie> getPassengerBogies() {
+        return passengerBogies;
+    }
+
+    public void setPassengerBogies(List<Bogie> passengerBogies) {
+        this.passengerBogies = passengerBogies;
     }
 
 
