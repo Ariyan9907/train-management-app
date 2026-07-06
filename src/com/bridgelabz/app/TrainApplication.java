@@ -37,6 +37,10 @@ public class TrainApplication {
 
         trainService.displayTrainFormation(train);
 
+        trainService.addBogieCapacity(train);
+
+        trainService.displayBogieCapacity(train);
+
     }
 
 
