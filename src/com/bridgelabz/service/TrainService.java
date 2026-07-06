@@ -7,6 +7,7 @@ import com.bridgelabz.model.Train;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class TrainService {
 
@@ -173,12 +174,23 @@ public class TrainService {
         }
     }
 
-    // Adds passenger bogie objects to the train.
+    // Adds passenger bogie objects with their category.
     public void addPassengerBogieObjects(Train train) {
 
-        train.getPassengerBogies().add(new Bogie("Sleeper",72));
-        train.getPassengerBogies().add(new Bogie("AC Chair",56));
-        train.getPassengerBogies().add(new Bogie("First Class",24));
+        train.getPassengerBogies().add(
+                new Bogie("Sleeper",72,"Passenger"));
+
+        train.getPassengerBogies().add(
+                new Bogie("AC Chair",56,"Passenger"));
+
+        train.getPassengerBogies().add(
+                new Bogie("First Class",24,"Passenger"));
+
+        train.getPassengerBogies().add(
+                new Bogie("Coal Wagon",120,"Goods"));
+
+        train.getPassengerBogies().add(
+                new Bogie("Petroleum Tank",150,"Goods"));
 
         System.out.println("\nPassenger bogie objects added successfully.");
     }
@@ -213,6 +225,26 @@ public class TrainService {
         System.out.println("\n========= High Capacity Passenger Bogies =========");
 
         filteredBogies.forEach(System.out::println);
+    }
+
+    // Groups bogies by their type.
+    public void groupBogiesByType(Train train) {
+
+        Map<String,List<Bogie>> groupedBogies =
+                train.getPassengerBogies()
+                        .stream()
+                        .collect(Collectors.groupingBy(Bogie::getType));
+
+        System.out.println("\n========= Grouped Bogies =========");
+
+        groupedBogies.forEach((type,bogies)->{
+
+            System.out.println("\n"+type);
+
+            bogies.forEach(System.out::println);
+
+        });
+
     }
 
 }

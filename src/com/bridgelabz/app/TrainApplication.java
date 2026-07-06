@@ -41,6 +41,8 @@ public class TrainApplication {
 
         trainService.displayBogieCapacity(train);
 
+        trainService.groupBogiesByType(train);
+
     }
 
 
