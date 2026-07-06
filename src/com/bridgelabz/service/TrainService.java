@@ -84,4 +84,39 @@ public class TrainService {
         }
     }
 
+    public void createTrainConsist(Train train) {
+
+        train.getTrainConsist().add("Engine");
+        train.getTrainConsist().add("Sleeper");
+        train.getTrainConsist().add("AC");
+        train.getTrainConsist().add("Cargo");
+        train.getTrainConsist().add("Guard");
+
+        System.out.println("\nTrain consist created successfully.");
+    }
+
+    public void insertPantryCar(Train train) {
+
+        train.getTrainConsist().add(2, "Pantry Car");
+
+        System.out.println("\nPantry Car inserted successfully.");
+    }
+
+    public void removeFirstAndLastBogie(Train train) {
+
+        train.getTrainConsist().removeFirst();
+        train.getTrainConsist().removeLast();
+
+        System.out.println("\nFirst and Last bogies removed.");
+    }
+
+    public void displayTrainConsist(Train train) {
+
+        System.out.println("\n========= Ordered Train Consist =========");
+
+        for (String bogie : train.getTrainConsist()) {
+            System.out.println(bogie);
+        }
+    }
+
 }
