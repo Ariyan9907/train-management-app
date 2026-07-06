@@ -43,6 +43,8 @@ public class TrainApplication {
 
         trainService.groupBogiesByType(train);
 
+        trainService.calculateTotalSeatingCapacity(train);
+
     }
 
 
